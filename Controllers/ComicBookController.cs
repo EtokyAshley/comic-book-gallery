@@ -1,28 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using ComicBookGallery.Models;
 using System.Web.Mvc;
 
 namespace ComicBookGallery.Controllers
 {
-    public class ComicBookController : Controller
+    public class ComicBooksController : Controller
     {
-        public ActionResult Detail()
+        public ActionResult Index()
         {
-            ViewBag.SeriesTitle = "The Amazing Spider-Man";
-            ViewBag.IssueNumber = 700;
-            ViewBag.Description = "<p>Final issue! Witness the final hours of Doctor Octopus' life and his one, last, great act of revenge! Even if Spider-Man survives...<strong>will Peter Parker?</strong></p>";
-            ViewBag.Artists = new string[]
+            var comicBooks = new ComicBook[]
             {
-                "Script: Dan Slott",
-                "Pencils: Humberto Ramos",
-                "Inks: Victor Olazaba",
-                "Colors: Edgar Delgado",
-                "Letters: Chris Eliopoulos"
+        new ComicBook
+        {
+            Id = 1,
+            SeriesTitle = "The Amazing Spider-Man",
+            IssueNumber = 700,
+            DescriptionHtml = "Final issue!"
+        },
+        new ComicBook
+        {
+            Id = 2,
+            SeriesTitle = "Batman",
+            IssueNumber = 1,
+            DescriptionHtml = "Batman comic book"
+        }
             };
 
-            return View();
+            return View(comicBooks);
+        }
+
+        public ActionResult Detail()
+        {
+            ComicBook comicBook = new ComicBook
+            {
+                SeriesTitle = "The Amazing Spider-Man",
+                IssueNumber = 700,
+                DescriptionHtml = "Final issue!",
+                Favorite = false,
+                Artists = new Artist[0]
+            };
+
+            return View(comicBook);
         }
     }
 }

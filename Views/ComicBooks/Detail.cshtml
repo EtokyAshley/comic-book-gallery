@@ -1,7 +1,7 @@
 ﻿@model ComicBookGallery.Models.ComicBook
 
 @{
-    ViewBag.Title = Model.DisplayText;
+    ViewBag.Title = Model != null ? Model.DisplayText : "Detail";
     ViewBag.ShowBackBar = true;
 }
 

@@ -105,8 +105,10 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
-    <Content Include="Views\Detail.cshtml" />
-    <Content Include="Views\idex.cshtml" />
+    <Content Include="Views\ComicBooks\Detail.cshtml" />
+    <Content Include="Views\ComicBooks\index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

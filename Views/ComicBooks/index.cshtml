@@ -1,0 +1,38 @@
+﻿@model ComicBookGallery.Models.ComicBook[]
+
+@{
+    ViewBag.Title = "Comic Books";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+
+    @foreach (var comicBook in Model)
+    {
+        <div class="col-md-3">
+
+            <h4>
+                @Html.ActionLink(
+                    comicBook.DisplayText,
+                    "Detail",
+                    new { id = comicBook.Id }
+                )
+            </h4>
+
+            <p>
+                @comicBook.SeriesTitle
+            </p>
+
+            <p>
+                Numéro : @comicBook.IssueNumber
+            </p>
+
+            <p>
+                @comicBook.DescriptionHtml
+            </p>
+
+        </div>
+    }
+
+</div>
